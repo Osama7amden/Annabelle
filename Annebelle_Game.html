@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+  <style>
+  
+    body{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #ddd;
+    }
+    /* h1 styles */
+    .h1_welcome{
+      text-align: center;
+      color: darkblack;
+    }
+    .h1_main{
+      border-right: 5px solid black;
+      font-size: 30px;
+      color: red;
+      text-align: center;
+    }
+    .h1_choose{
+      border: 2px solid black;
+      margin: 80px;
+      padding: 10px;
+      text-align: center;
+      border-radius: 30%;
+      }
+    .h1_choose:hover{
+      color: white;
+      background-color: black;
+    }
+    /* end style for h1*/
+    
+    /*style for annabelle*/
+    .Ghost{
+      border: 2px solid black;
+      border-radius: 50%;
+      margin-top: 50px;
+      margin-left: 20px;
+      height: 200%;
+      
+    }
+    .Ghost:hover{
+      transform: translate(11%);
+      transition: 3s;
+    }
+        /* end style for annabelle*/
+        
+      /* style for inputs*/
+    input {
+     border: 1px solid black;
+     border-radius: 30px;
+     outline: none;
+     width: 150px;
+     height: 135px;
+     margin: 10px;
+     padding: 3px;
+   }
+   button{
+     border: 1px solid black;
+     border-radius: 30px;
+     outline: none;
+     position: relative;
+     left: 32%;
+     margin: 30px;
+     padding: 5px;
+     background-color: lightblue;
+     font-size: 40px;
+   }
+   button:hover{
+     background-color: black;
+     color: white;
+   }
+   
+        /* end style for inputs */
+   
+</style>
+
+ <div class="con">
+   <h1 class="h1_welcome"> Annabelle's Game</h1>
+   <img src="/Annabelle.jpeg" alt="Annabelle's_Ghost" class="Ghost">
+   <h1 class="h1_main">&#128680 Annabelle's Ghost behind You
+        Choose One Door To Escape! </h1>
+  <h1 class="h1_choose"> Choose A door </h1>
+ </div>
+ <div class="con_2">
+  <input type="image" src="/ door1.jpeg" alt="door1" value="1">
+  <input type="image" src="/door2.jpeg" alt="door2" value="2">
+  <input type="image" src="/door3.jpeg" alt="door3" value="3">
+  <input type="image" src="/door4.jpeg" alt="door4" value="4">
+ </div>
+ <button onclick= sub() >Go !</button>
+</body>
+
+<script>
+  /* random function*/
+  
+  function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  /* submit function */
+  
+  function sub(){
+    let ch = document.querySelector('input').value;
+    let rd = getRndInteger(0,4);
+    if (ch == rd) {
+      window.alert("Escaped ");
+    } else if(ch == '') {
+      window.alert("Please Choose Door")
+    }else{
+      window.alert("Killed ! ");
+    }
+  }
+
+</script>
+
+
+</html>
