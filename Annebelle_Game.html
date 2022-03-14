@@ -108,15 +108,23 @@
   }
   /* submit function */
   
+  var score = 0;
+  
   function sub(){
     let ch = document.querySelector('input').value;
     let rd = getRndInteger(0,4);
     if (ch == rd) {
-      window.alert("Escaped ");
+      score= score + 100;
+      window.alert("Escaped ,Your score is " + score);
     } else if(ch == '') {
       window.alert("Please Choose Door")
     }else{
-      window.alert("Killed ! ");
+      score = score - 10;
+      if (score <= 0){
+        score = 0;
+      }
+      window.alert("Killed ! ,Your score is " + score);
+      
     }
   }
 
